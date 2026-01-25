@@ -1,17 +1,15 @@
-
 import React, { useState } from 'react';
-import Navbar from './components/Navbar.tsx';
-import Hero from './components/Hero.tsx';
-import About from './components/About.tsx';
-import Experience from './components/Experience.tsx';
-import Certifications from './components/Certifications.tsx';
-import Skills from './components/Skills.tsx';
-import Projects from './components/Projects.tsx';
-import Concepts from './components/Concepts.tsx';
-import Background from './components/Background.tsx';
-import TaglineSection from './components/TaglineSection.tsx';
-// Fix: Import the missing Contact component
-import Contact from './components/Contact.tsx';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Experience from './components/Experience';
+import Certifications from './components/Certifications';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Concepts from './components/Concepts';
+import Background from './components/Background';
+import TaglineSection from './components/TaglineSection';
+import Contact from './components/Contact';
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,7 +32,6 @@ const App: React.FC = () => {
 
         <TaglineSection />
         
-        {/* Adjusted max-width to max-w-7xl for better information density */}
         <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-32 pb-32 pt-32">
           <section id="about">
             <About />
