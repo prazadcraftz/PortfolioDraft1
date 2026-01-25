@@ -25,7 +25,7 @@ const App: React.FC = () => {
         onToggle={toggleMenu} 
       />
 
-      <main className={`transition-all duration-500 ${isMenuOpen ? 'blur-md opacity-30 scale-95 pointer-events-none' : 'opacity-100 scale-100'}`}>
+      <main className={`transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] ${isMenuOpen ? 'blur-sm opacity-20 scale-95 pointer-events-none' : 'opacity-100 scale-100'}`}>
         <section id="hero">
           <Hero />
         </section>
