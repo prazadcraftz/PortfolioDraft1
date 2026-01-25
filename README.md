@@ -21,21 +21,4 @@ A high-performance, gaming-inspired professional portfolio built with React, Tai
 - **High Performance**: C++ and Python optimization for low-latency tasks.
 - **Cloud AI**: Certified Azure and OCI AI practitioner.
 
-## 📦 Local Setup
-To run this project locally, ensure you have [Node.js](https://nodejs.org/) installed:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Run the development server:
-   ```bash
-   npm run dev
-   ```
-
----
 Built with Precision by [Dasari Bhanu Prasad](https://www.linkedin.com/in/dasaribhanuprasad/)
