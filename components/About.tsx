@@ -1,106 +1,106 @@
 
 import React from 'react';
-import { BookOpen, MapPin, Gamepad2, Zap, GraduationCap } from 'lucide-react';
+import { Cpu, Zap, Trophy, MapPin, Code2, LineChart, Target, Binary, BrainCircuit } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div>
-        <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-8 flex items-center gap-4">
-          <span className="w-12 h-1 bg-white"></span>
-          About Me
-        </h2>
-        
-        <div className="space-y-6 text-neutral-400 leading-relaxed text-lg">
-          <p>
-            I'm a <span className="text-white font-bold">Computer Science Engineering student</span> at 
-            <span className="text-cyan-400"> Chandigarh University</span> with a profound obsession 
-            for Machine Learning and Data Science.
-          </p>
-          <p>
-            My journey into tech is fueled by curiosity and a relentless drive to build intelligent systems. 
-            When I'm not tweaking neural network parameters or competing in hackathons, you can find me 
-            engrossed in the high-speed drama of <span className="text-white font-semibold italic">Formula 1</span> or 
-            unraveling the multiversal theories of the <span className="text-white font-semibold">MCU</span>.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 gap-6 mt-12">
-          <InfoCard icon={<BookOpen className="text-cyan-400" />} label="Education" value="B.E. CSE" />
-          <InfoCard icon={<MapPin className="text-red-400" />} label="Location" value="Mohali, India" />
-          <InfoCard icon={<Gamepad2 className="text-green-400" />} label="Interests" value="Gaming & F1" />
-          <InfoCard icon={<Zap className="text-yellow-400" />} label="Focus" value="AI Research" />
-        </div>
-      </div>
-
-      <div className="relative group">
-        <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-        <div className="relative min-h-[500px] overflow-hidden rounded-2xl border border-white/10 bg-neutral-900 flex flex-col p-8">
-          {/* Abstract background element */}
-          <div className="absolute top-0 right-0 w-64 h-64 border border-white/5 rounded-full -mr-32 -mt-32 animate-[spin_20s_linear_infinite]"></div>
+    <div className="space-y-24 relative">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 relative z-10">
+        {/* Core Profile Card */}
+        <div className="md:col-span-8 group relative overflow-hidden rounded-3xl p-10 md:p-12 border border-white/5 bg-white/[0.02] transition-all duration-500 hover:bg-white/[0.04]">
+          <div className="absolute -top-10 -right-10 opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none">
+            <Cpu className="w-64 h-64 text-cyan-400 rotate-12" />
+          </div>
           
           <div className="relative z-10">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="p-3 bg-white/5 rounded-xl border border-white/10">
-                <GraduationCap className="w-6 h-6 text-cyan-400" />
-              </div>
-              <h3 className="text-2xl font-black text-white uppercase tracking-tight">Education</h3>
-            </div>
-
+            <h3 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">Dasari Bhanu Prasad</h3>
+            
             <div className="space-y-8">
-              <EducationItem 
-                school="Chandigarh University"
-                degree="B.Tech in Computer Science Engineering (AI/ML)"
-                period="2023 – 2027"
-                score="CGPA: 7.07"
-                isCurrent
-              />
-              <EducationItem 
-                school="Sri Gayatri Junior College"
-                degree="Intermediate (MPC)"
-                period="2021 – 2023"
-                score="Percentage: 95.8%"
-              />
-              <EducationItem 
-                school="Narayana High School"
-                degree="Secondary Education"
-                period="2019 – 2021"
-                score="Percentage: 73%"
-              />
+              <p className="text-neutral-300 text-lg leading-relaxed max-w-2xl font-medium">
+                CS Undergraduate at <span className="text-white font-bold underline decoration-cyan-500/50">Chandigarh University</span> with a core focus on Machine Learning and High-Performance Computing. I build systems where data precision meets real-time execution.
+              </p>
+
+              {/* Recruiter-Friendly Scannable List */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 py-4">
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="mt-1 p-2 bg-cyan-500/10 rounded-lg text-cyan-400">
+                      <BrainCircuit className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="text-white font-bold text-sm uppercase tracking-wider">Predictive Modeling</h4>
+                      <p className="text-neutral-500 text-sm">Deep expertise in XGBoost and ensemble methods for telemetry analysis.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="mt-1 p-2 bg-purple-500/10 rounded-lg text-purple-400">
+                      <Binary className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="text-white font-bold text-sm uppercase tracking-wider">Algorithmic Efficiency</h4>
+                      <p className="text-neutral-500 text-sm">Proficient in C++ and Python for low-latency data processing.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="mt-1 p-2 bg-emerald-500/10 rounded-lg text-emerald-400">
+                      <Target className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="text-white font-bold text-sm uppercase tracking-wider">Cloud Deployment</h4>
+                      <p className="text-neutral-500 text-sm">Certified in Azure and OCI AI for production-scale deployments.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="mt-1 p-2 bg-red-500/10 rounded-lg text-red-400">
+                      <Zap className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="text-white font-bold text-sm uppercase tracking-wider">F1 & Gaming Logic</h4>
+                      <p className="text-neutral-500 text-sm">Applying race-pace strategy and game theory to problem solving.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex flex-wrap gap-6 mt-12 pt-8 border-t border-white/5">
+              <div className="flex items-center gap-3 text-white/50 text-xs font-black uppercase tracking-widest hover:text-cyan-400 transition-colors">
+                <MapPin className="w-4 h-4 text-cyan-500" />
+                <span>Mohali, Punjab, India</span>
+              </div>
+              <div className="flex items-center gap-3 text-white/50 text-xs font-black uppercase tracking-widest hover:text-purple-400 transition-colors">
+                <Code2 className="w-4 h-4 text-purple-500" />
+                <span>Python / C++ Expert</span>
+              </div>
             </div>
           </div>
-          
-          {/* BP Branding in background */}
-          <div className="absolute bottom-4 right-4 text-9xl font-black text-white/5 pointer-events-none select-none">
-            BP
-          </div>
+        </div>
+
+        {/* Dynamic Stats Grid */}
+        <div className="md:col-span-4 grid grid-cols-1 gap-4">
+          <StatBox icon={<Zap className="w-5 h-5 text-cyan-400" />} label="Specialization" value="Machine Learning" />
+          <StatBox icon={<LineChart className="w-5 h-5 text-emerald-400" />} label="Objective" value="Model Optimization" />
+          <StatBox icon={<Trophy className="w-5 h-5 text-amber-400" />} label="Status" value="Hackathon Lead" />
         </div>
       </div>
     </div>
   );
 };
 
-const EducationItem: React.FC<{ 
-  school: string; 
-  degree: string; 
-  period: string; 
-  score: string;
-  isCurrent?: boolean;
-}> = ({ school, degree, period, score, isCurrent }) => (
-  <div className="relative pl-6 border-l border-white/10 group/item">
-    <div className={`absolute left-[-5px] top-1.5 w-2.5 h-2.5 rounded-full border border-white/20 bg-neutral-900 transition-colors group-hover/item:bg-white ${isCurrent ? 'bg-cyan-400 border-cyan-400 ring-4 ring-cyan-400/20' : ''}`}></div>
-    <p className="text-xs font-black uppercase tracking-widest text-neutral-500 mb-1">{period}</p>
-    <h4 className="text-lg font-bold text-white group-hover/item:text-cyan-400 transition-colors">{school}</h4>
-    <p className="text-sm text-neutral-400 mb-1">{degree}</p>
-    <p className="text-xs font-bold text-white/60">{score}</p>
-  </div>
-);
-
-const InfoCard: React.FC<{ icon: React.ReactNode; label: string; value: string }> = ({ icon, label, value }) => (
-  <div className="p-4 bg-white/5 border border-white/5 rounded-2xl hover:bg-white/10 transition-colors">
-    <div className="mb-2">{icon}</div>
-    <p className="text-xs text-neutral-500 uppercase font-bold tracking-wider">{label}</p>
-    <p className="text-white font-bold">{value}</p>
+const StatBox: React.FC<{ icon: React.ReactNode, label: string, value: string }> = ({ icon, label, value }) => (
+  <div className="rounded-2xl bg-white/[0.03] border border-white/5 p-6 hover:bg-white/[0.07] transition-all group overflow-hidden flex flex-col justify-center">
+    <div className="flex items-center gap-4 relative z-10">
+      <div className="p-3 bg-black/40 rounded-xl border border-white/10 group-hover:scale-105 transition-transform">
+        {icon}
+      </div>
+      <div>
+        <p className="text-[9px] font-black uppercase tracking-[0.2em] text-neutral-500 mb-1">{label}</p>
+        <p className="text-white font-black text-lg tracking-tight">{value}</p>
+      </div>
+    </div>
   </div>
 );
 

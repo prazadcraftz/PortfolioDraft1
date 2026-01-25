@@ -13,7 +13,7 @@ const Background: React.FC = () => {
 
     let particles: Particle[] = [];
     const particleCount = 100;
-    const maxDistance = 150;
+    const maxDistance = 200;
 
     class Particle {
       x: number;
@@ -24,21 +24,20 @@ const Background: React.FC = () => {
       constructor(width: number, height: number) {
         this.x = Math.random() * width;
         this.y = Math.random() * height;
-        this.vx = (Math.random() - 0.5) * 0.5;
-        this.vy = (Math.random() - 0.5) * 0.5;
+        this.vx = (Math.random() - 0.5) * 0.4;
+        this.vy = (Math.random() - 0.5) * 0.4;
       }
 
       update(width: number, height: number) {
         this.x += this.vx;
         this.y += this.vy;
-
         if (this.x < 0 || this.x > width) this.vx *= -1;
         if (this.y < 0 || this.y > height) this.vy *= -1;
       }
 
       draw(ctx: CanvasRenderingContext2D) {
         ctx.beginPath();
-        ctx.arc(this.x, this.y, 1.5, 0, Math.PI * 2);
+        ctx.arc(this.x, this.y, 1.2, 0, Math.PI * 2);
         ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
         ctx.fill();
       }
@@ -55,20 +54,17 @@ const Background: React.FC = () => {
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-
       particles.forEach((p, i) => {
         p.update(canvas.width, canvas.height);
         p.draw(ctx);
-
         for (let j = i + 1; j < particles.length; j++) {
           const p2 = particles[j];
           const dx = p.x - p2.x;
           const dy = p.y - p2.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-
           if (dist < maxDistance) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.1 * (1 - dist / maxDistance)})`;
+            ctx.strokeStyle = `rgba(255, 255, 255, ${0.08 * (1 - dist / maxDistance)})`;
             ctx.lineWidth = 0.5;
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
@@ -76,19 +72,14 @@ const Background: React.FC = () => {
           }
         }
       });
-
       requestAnimationFrame(animate);
     };
 
     init();
     animate();
-
     const handleResize = () => init();
     window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (

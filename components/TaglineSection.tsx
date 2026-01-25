@@ -76,24 +76,11 @@ const TaglineSection: React.FC = () => {
                   className="absolute top-0 text-[14vw] md:text-[12vw] font-black leading-[0.8] tracking-tighter uppercase text-white select-none whitespace-nowrap"
                   style={{ 
                     clipPath: `inset(0 ${100 - (easedLp * 100)}% 0 0)`,
-                    transition: 'clip-path 0.15s cubic-bezier(0.25, 0.1, 0.25, 1.0)',
-                    filter: easedLp > 0 ? `drop-shadow(0 0 25px rgba(255,255,255,${easedLp * 0.4}))` : 'none'
+                    transition: 'clip-path 0.15s cubic-bezier(0.25, 0.1, 0.25, 1.0)'
                   }}
                 >
                   {phrase}
                 </h2>
-
-                {/* Leading Edge Glow Line */}
-                <div 
-                  className="absolute top-0 bottom-0 w-[4px] bg-cyan-400 shadow-[0_0_25px_#22d3ee] pointer-events-none"
-                  style={{ 
-                    left: `calc(50% - 40vw + ${easedLp * 80}vw)`, 
-                    opacity: easedLp > 0 && easedLp < 1 ? 1 : 0,
-                    height: '100%',
-                    transform: 'translateX(-50%)',
-                    transition: 'left 0.15s cubic-bezier(0.25, 0.1, 0.25, 1.0), opacity 0.2s ease'
-                  }}
-                />
               </div>
             );
           })}

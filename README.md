@@ -1,20 +1,41 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
 
-# Run and deploy your AI Studio app
+# Dasari Bhanu Prasad | ML Engineer Portfolio
 
-This contains everything you need to run your app locally.
+A high-performance, gaming-inspired professional portfolio built with React, Tailwind CSS, and Lucide. This project showcases expertise in Machine Learning, High-Performance Computing, and system-level optimization.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1RywQ48oH-QMS86IzH7IGbfpUV8WYy1dB
+## 🚀 Features
+- **Bento-style UI**: Modern, high-density information layout.
+- **Interactive Background**: Custom Canvas-based particle network.
+- **Staggered Scroll Reveals**: Custom "Train. Test. Transform." reveal sequence.
+- **Responsive Design**: Fully optimized for mobile and desktop displays.
+- **Glassmorphism**: Advanced CSS blur and border effects.
 
-## Run Locally
+## 🛠️ Tech Stack
+- **Frontend**: React (ES6+), Tailwind CSS
+- **Icons**: Lucide React
+- **Typography**: Inter & Montserrat (900 Weight)
+- **Visuals**: HTML5 Canvas API, Framer-inspired animations
 
-**Prerequisites:**  Node.js
+## 🧠 Core Focus
+- **Machine Learning**: Predictive modeling using XGBoost and Scikit-Learn.
+- **High Performance**: C++ and Python optimization for low-latency tasks.
+- **Cloud AI**: Certified Azure and OCI AI practitioner.
 
+## 📦 Local Setup
+To run this project locally, ensure you have [Node.js](https://nodejs.org/) installed:
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+---
+Built with Precision by [Dasari Bhanu Prasad](https://www.linkedin.com/in/dasaribhanuprasad/)

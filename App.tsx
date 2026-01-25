@@ -8,9 +8,10 @@ import Certifications from './components/Certifications.tsx';
 import Skills from './components/Skills.tsx';
 import Projects from './components/Projects.tsx';
 import Concepts from './components/Concepts.tsx';
-import Contact from './components/Contact.tsx';
 import Background from './components/Background.tsx';
 import TaglineSection from './components/TaglineSection.tsx';
+// Fix: Import the missing Contact component
+import Contact from './components/Contact.tsx';
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,20 +19,23 @@ const App: React.FC = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <div className="relative min-h-screen bg-[#121212] selection:bg-white/20">
+    <div className="relative min-h-screen bg-[#020202] text-white selection:bg-cyan-500/20">
       <Background />
       
-      <Navbar isOpen={isMenuOpen} onToggle={toggleMenu} />
+      <Navbar 
+        isOpen={isMenuOpen} 
+        onToggle={toggleMenu} 
+      />
 
       <main className={`transition-all duration-500 ${isMenuOpen ? 'blur-md opacity-30 scale-95 pointer-events-none' : 'opacity-100 scale-100'}`}>
         <section id="hero">
           <Hero />
         </section>
 
-        {/* High Impact Tagline Section */}
         <TaglineSection />
         
-        <div className="max-w-6xl mx-auto px-6 space-y-32 pb-32 pt-32">
+        {/* Adjusted max-width to max-w-7xl for better information density */}
+        <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-32 pb-32 pt-32">
           <section id="about">
             <About />
           </section>
@@ -62,7 +66,7 @@ const App: React.FC = () => {
         </div>
       </main>
 
-      <footer className="text-center py-8 text-neutral-500 border-t border-white/5 bg-black/20 backdrop-blur-sm">
+      <footer className="text-center py-12 text-neutral-600 border-t border-white/5 bg-black/40 backdrop-blur-sm">
         <p>© {new Date().getFullYear()} Dasari Bhanu Prasad. Built with Passion & Precision.</p>
       </footer>
     </div>

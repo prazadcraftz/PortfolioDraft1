@@ -1,77 +1,98 @@
 
 import React from 'react';
-import { Send, MapPin, Mail, Phone } from 'lucide-react';
+import { Send, Mail, Github, Linkedin } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
-    <div className="bg-[#1a1a1a] rounded-[3rem] p-8 md:p-16 border border-white/5">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        <div>
-          <h2 className="text-5xl font-black text-white uppercase tracking-tighter mb-6">
-            Let's Start a <br />
-            <span className="animate-gradient-text">Conversation</span>
-          </h2>
-          <p className="text-neutral-400 text-lg max-w-md mb-12 leading-relaxed">
-            Whether you want to talk about Machine Learning, the MCU's future, or 
-            why McLaren is the team to watch in F1 — I'm all ears.
-          </p>
+    <div className="relative group">
+      <div className="relative bg-[#080808] rounded-[3rem] p-10 md:p-16 border border-white/5 overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
+          <div className="flex flex-col justify-center">
+            <h2 className="text-5xl font-black text-white uppercase tracking-tighter mb-8 leading-tight">
+              Initiate <br />
+              <span className="animate-gradient-text italic">Contact</span>
+            </h2>
+            <p className="text-neutral-500 text-lg max-w-sm mb-12 leading-relaxed font-medium">
+              Available for <span className="text-white">ML Research</span>, Internships, and Technical Collaborations.
+            </p>
 
-          <div className="space-y-6">
-            <ContactInfo icon={<Mail />} label="Email" value="itsbhanudasari@gmail.com" />
-            <ContactInfo icon={<Phone />} label="Phone" value="+91 XXXXXXXXXX" />
-            <ContactInfo icon={<MapPin />} label="Based in" value="Punjab, India" />
+            <div className="space-y-6">
+              <ContactInfo icon={<Mail className="w-4 h-4" />} label="Email Address" value="itsbhanudasari@gmail.com" />
+              <ContactInfo icon={<Linkedin className="w-4 h-4" />} label="LinkedIn Profile" value="/in/dasaribhanuprasad" href="https://www.linkedin.com/in/dasaribhanuprasad/" />
+              <ContactInfo icon={<Github className="w-4 h-4" />} label="Github Repository" value="/prazadcraftz" href="https://github.com/prazadcraftz" />
+            </div>
           </div>
+
+          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Input label="Your Name" placeholder="Bhanu Prasad" />
+              <Input label="Your Email" placeholder="bhanu@example.com" />
+            </div>
+            
+            <div className="space-y-3">
+              <div className="flex items-baseline gap-2 ml-2">
+                <label className="text-[10px] font-black text-white uppercase tracking-widest">Purpose</label>
+              </div>
+              <select className="w-full bg-white/[0.03] border border-white/5 rounded-xl p-4 text-neutral-400 focus:outline-none focus:border-cyan-500/50 transition-all appearance-none cursor-pointer">
+                <option value="recruitment">Recruitment / Internship</option>
+                <option value="research">ML Research Collaboration</option>
+                <option value="freelance">Project Inquiry</option>
+                <option value="general">General Transmission</option>
+              </select>
+            </div>
+
+            <div className="space-y-3">
+              <div className="flex items-baseline gap-2 ml-2">
+                <label className="text-[10px] font-black text-white uppercase tracking-widest">Message</label>
+              </div>
+              <textarea 
+                rows={4} 
+                className="w-full bg-white/[0.03] border border-white/5 rounded-xl p-4 text-white focus:outline-none focus:border-cyan-500/50 transition-all focus:bg-white/[0.05] resize-none" 
+                placeholder="Compose your transmission..."
+              ></textarea>
+            </div>
+
+            <button className="w-full py-5 bg-white text-black font-black uppercase tracking-[0.2em] text-xs rounded-xl flex items-center justify-center gap-3 hover:bg-cyan-400 transition-all group relative overflow-hidden">
+              <span className="relative z-10">Send Transmission</span>
+              <Send className="w-4 h-4 relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:left-[100%] transition-all duration-700"></div>
+            </button>
+          </form>
         </div>
-
-        <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Input label="Your Name" placeholder="Bhanu Prasad" />
-            <Input label="Email Address" placeholder="bhanu@example.com" />
-          </div>
-          <div className="space-y-2">
-            <label className="text-xs font-black uppercase tracking-widest text-neutral-500">Subject</label>
-            <input 
-              type="text" 
-              className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-white focus:outline-none focus:border-cyan-500 transition-colors" 
-              placeholder="Collaboration / MCU Theory / Hello"
-            />
-          </div>
-          <div className="space-y-2">
-            <label className="text-xs font-black uppercase tracking-widest text-neutral-500">Message</label>
-            <textarea 
-              rows={4} 
-              className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-white focus:outline-none focus:border-cyan-500 transition-colors resize-none" 
-              placeholder="Tell me something interesting..."
-            ></textarea>
-          </div>
-          <button className="w-full py-5 bg-white text-black font-black uppercase tracking-widest rounded-2xl flex items-center justify-center gap-3 hover:bg-neutral-200 transition-colors group">
-            Send Transmission
-            <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-          </button>
-        </form>
       </div>
     </div>
   );
 };
 
-const ContactInfo: React.FC<{ icon: React.ReactNode; label: string; value: string }> = ({ icon, label, value }) => (
-  <div className="flex items-center gap-6 group">
-    <div className="p-4 bg-white/5 border border-white/10 rounded-2xl group-hover:bg-white/10 transition-colors">
-      {icon}
+const ContactInfo: React.FC<{ icon: React.ReactNode; label: string; value: string; href?: string }> = ({ icon, label, value, href }) => (
+  <a 
+    href={href} 
+    target={href ? "_blank" : undefined} 
+    rel={href ? "noopener noreferrer" : undefined}
+    className={`flex items-center gap-5 group ${href ? 'cursor-pointer' : 'cursor-default'}`}
+  >
+    <div className="p-3 bg-white/5 border border-white/10 rounded-xl group-hover:bg-cyan-500/10 transition-all">
+      <div className="text-neutral-500 group-hover:text-cyan-400 transition-colors">
+        {icon}
+      </div>
     </div>
     <div>
-      <p className="text-xs font-black uppercase tracking-widest text-neutral-500 mb-1">{label}</p>
-      <p className="text-white font-bold">{value}</p>
+      <div className="flex items-center gap-2 mb-0.5">
+        <p className="text-[10px] font-black text-white uppercase tracking-wider">{label}</p>
+      </div>
+      <p className="text-neutral-500 font-bold group-hover:text-white transition-colors text-sm">{value}</p>
     </div>
-  </div>
+  </a>
 );
 
 const Input: React.FC<{ label: string; placeholder: string }> = ({ label, placeholder }) => (
-  <div className="space-y-2">
-    <label className="text-xs font-black uppercase tracking-widest text-neutral-500">{label}</label>
+  <div className="space-y-3">
+    <div className="flex items-baseline gap-2 ml-2">
+      <label className="text-[10px] font-black text-white uppercase tracking-widest">{label}</label>
+    </div>
     <input 
       type="text" 
-      className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-white focus:outline-none focus:border-cyan-500 transition-colors" 
+      className="w-full bg-white/[0.03] border border-white/5 rounded-xl p-4 text-white focus:outline-none focus:border-cyan-500/50 transition-all focus:bg-white/[0.05]" 
       placeholder={placeholder}
     />
   </div>
