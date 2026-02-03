@@ -1,15 +1,14 @@
 import React from 'react';
-import { FileText, ChevronRight, ShieldCheck } from 'lucide-react';
+import { FileText, ChevronRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
-  const handleDownload = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // This helper provides feedback if the user hasn't uploaded the file yet
-    const fileName = "Dasari_Bhanu_Prasad_Resume.pdf";
-    const filePath = `./${fileName}`;
-    
-    // We allow the default download behavior, but we add a check
-    // to warn the user if they are testing locally without the file.
-    console.log(`Initiating download for: ${fileName}`);
+  // Using a direct path string instead of an 'import' statement.
+  // In most web environments, a leading '/' refers to the root of the domain.
+  // Since the file is in your GitHub root, this will correctly point to it after deployment.
+  const resumeUrl = "/Dasari_Bhanu_Prasad_Resume.pdf";
+
+  const handleDownload = () => {
+    console.log(`Initiating download from: ${resumeUrl}`);
   };
 
   return (
@@ -19,11 +18,6 @@ const Hero: React.FC = () => {
 
       <div className="w-full max-w-7xl relative z-10">
         <div className="mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6 animate-pulse">
-            <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-cyan-400">Identity Verified</span>
-          </div>
-          
           <h1 className="font-['Montserrat'] text-[clamp(3.5rem,14vw,8.5rem)] font-black leading-[0.8] tracking-tighter uppercase select-none flex flex-col items-center">
             <span className="text-white opacity-95">HI, I AM</span>
             <span className="animate-gradient-text block py-4">
@@ -35,7 +29,7 @@ const Hero: React.FC = () => {
         <div className="flex flex-col items-center gap-10 mt-12">
           <div className="flex flex-wrap items-center justify-center gap-5">
             <a 
-              href="./Dasari_Bhanu_Prasad_Resume.pdf" 
+              href={resumeUrl} 
               download="Dasari_Bhanu_Prasad_Resume.pdf"
               onClick={handleDownload}
               className="group relative px-10 py-5 bg-white text-black font-black text-sm uppercase rounded-xl flex items-center gap-3 transition-all duration-300 hover:bg-cyan-400 hover:scale-105 shadow-[0_20px_50px_rgba(255,255,255,0.1)] active:scale-95"
