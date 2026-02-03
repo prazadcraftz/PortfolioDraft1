@@ -1,23 +1,24 @@
-
 import React from 'react';
-import { Database, Brain, Cloud, Layers, Binary, Terminal, Cpu, Code2 } from 'lucide-react';
+import { Database, Brain, Cloud, Layers, Binary, Terminal, Layout, GitBranch } from 'lucide-react';
 
 const Skills: React.FC = () => {
   const categories = [
     {
-      title: "TECH Stack",
+      title: "LANGUAGES & TOOLS",
       skills: [
-        { name: "C++", icon: <Binary />, level: "EXPERT", desc: "Low-level optimization" },
         { name: "Python", icon: <Terminal />, level: "EXPERT", desc: "ML workflows & Automation" },
-        { name: "MySQL", icon: <Database />, level: "ADVANCED", desc: "Relational architecture" }
+        { name: "C++", icon: <Binary />, level: "EXPERT", desc: "Low-level optimization" },
+        { name: "MySQL", icon: <Database />, level: "ADVANCED", desc: "Relational architecture" },
+        { name: "Git/GitHub", icon: <GitBranch />, level: "PROFICIENT", desc: "Version Control" }
       ]
     },
     {
       title: "AI & DATA ENGINEERING",
       skills: [
-        { name: "ML Modeling", icon: <Brain />, level: "ADVANCED", desc: "Supervised & Unsupervised" },
+        { name: "Scikit-Learn", icon: <Brain />, level: "ADVANCED", desc: "ML Modeling & Regression" },
+        { name: "Pandas/Matplotlib", icon: <Layout />, level: "ADVANCED", desc: "Data Analysis & Viz" },
         { name: "Azure AI", icon: <Cloud />, level: "CERTIFIED", desc: "Cloud deployments" },
-        { name: "Algorithms", icon: <Layers />, level: "DEEP", desc: "Complex problem solving" }
+        { name: "DSA", icon: <Layers />, level: "DEEP", desc: "Complex problem solving" }
       ]
     }
   ];

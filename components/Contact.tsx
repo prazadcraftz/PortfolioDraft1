@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Send, Mail, Github, Linkedin } from 'lucide-react';
 
@@ -16,8 +15,8 @@ const Contact: React.FC = () => {
               Available for <span className="text-white">ML Research</span>, Internships, and Technical Collaborations.
             </p>
 
-            <div className="space-y-6">
-              <ContactInfo icon={<Mail className="w-4 h-4" />} label="Email Address" value="itsbhanudasari@gmail.com" />
+            <div className="space-y-4">
+              <ContactInfo icon={<Mail className="w-4 h-4" />} label="Email Address" value="itsbhanudasari@gmail.com" href="mailto:itsbhanudasari@gmail.com" />
               <ContactInfo icon={<Linkedin className="w-4 h-4" />} label="LinkedIn Profile" value="/in/dasaribhanuprasad" href="https://www.linkedin.com/in/dasaribhanuprasad/" />
               <ContactInfo icon={<Github className="w-4 h-4" />} label="Github Repository" value="/prazadcraftz" href="https://github.com/prazadcraftz" />
             </div>
@@ -67,8 +66,8 @@ const Contact: React.FC = () => {
 const ContactInfo: React.FC<{ icon: React.ReactNode; label: string; value: string; href?: string }> = ({ icon, label, value, href }) => (
   <a 
     href={href} 
-    target={href ? "_blank" : undefined} 
-    rel={href ? "noopener noreferrer" : undefined}
+    target={href?.startsWith('http') ? "_blank" : undefined} 
+    rel={href?.startsWith('http') ? "noopener noreferrer" : undefined}
     className={`flex items-center gap-5 group ${href ? 'cursor-pointer' : 'cursor-default'}`}
   >
     <div className="p-3 bg-white/5 border border-white/10 rounded-xl group-hover:bg-cyan-500/10 transition-all">
